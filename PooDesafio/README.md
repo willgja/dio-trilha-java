@@ -6,6 +6,31 @@ Este projeto simula algumas funcionalidades de um iPhone utilizando conceitos de
 
 ## Funcionalidades Implementadas
 
+### Exemplo de Diagrama UML (Mermaid)
+
+```mermaid
+classDiagram
+    Iphone <|-- ReprodutorMusical
+    Iphone <|-- AparelhoTelefonico
+    Iphone <|-- NavegadorInternet
+    
+    class ReprodutorMusical{
+      +tocar()
+      +pausar()
+      +selecionarMusica(String musica)
+    }
+    class AparelhoTelefonico{
+      +ligar(String numero)
+      +atender()
+      +iniciarCorreioDeVoz()
+    }
+    class NavegadorInternet{
+      +exibirPagina(String url)
+      +adicionarNovaAba()
+      +atualizarPagina()
+    }
+```
+
 ### Reprodutor Musical
 
 - **Métodos:**
@@ -60,3 +85,5 @@ public class Iphone {
         scanner.close();
     }
 }
+```
+
