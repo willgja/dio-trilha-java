@@ -1,18 +1,62 @@
-## Getting Started
+# iPhone Simulation Program
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Descrição
 
-## Folder Structure
+Este projeto simula algumas funcionalidades de um iPhone utilizando conceitos de Programação Orientada a Objetos (POO). As funcionalidades modeladas incluem um reprodutor musical, um aparelho telefônico e um navegador da internet.
 
-The workspace contains two folders by default, where:
+## Funcionalidades Implementadas
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### Reprodutor Musical
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- **Métodos:**
+  - `tocar()`
+  - `pausar()`
+  - `selecionarMusica(String musica)`
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### Aparelho Telefônico
 
-## Dependency Management
+- **Métodos:**
+  - `ligar(String numero)`
+  - `atender()`
+  - `iniciarCorreioDeVoz()`
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Navegador na Internet
+
+- **Métodos:**
+  - `exibirPagina(String url)`
+  - `adicionarNovaAba()`
+  - `atualizarPagina()`
+
+## Código Principal
+
+A classe `Iphone` simula interações com as três funcionalidades principais do iPhone.
+
+```java
+import java.util.Scanner;
+
+public class Iphone {
+    public static void main(String[] args) throws Exception {
+        AparelhoTelefonico celular = new AparelhoTelefonico();
+        NavegadorInternet navSafari = new NavegadorInternet();
+        ReprodutorMusical iTunes = new ReprodutorMusical();
+
+        Scanner scanner = new Scanner(System.in); 
+
+        System.out.println("Olá eu sou a Siri! Bem ao seu Iphone!");
+        iTunes.selecionarMusica("No lie ");
+        iTunes.pausar();
+        scanner.nextLine();
+
+        System.out.println("Sua mãe esta ti ligando.");
+        celular.atender();
+        celular.ligar("Pai");
+        celular.iniciarCorreioDeVoz();
+        scanner.nextLine();
+
+        System.out.println("Safari aberto");
+        navSafari.adicionarNovaAba();
+        navSafari.exibirPagina("google.com.br");
+        navSafari.atualizarPagina();
+        scanner.close();
+    }
+}
